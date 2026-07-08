@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(90deg, #ffffff 0%, #f8fafc 100%);
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+}
+
+.header .logo {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: 0.02em;
+}
+.card {
+    border: none;
+    cursor: pointer;
+    background: transparent; 
+    position: relative;      
+    padding: 10px;          
+}
+.badge-cart {
+    position: absolute;
+    top: 0px;                
+    right: 0px;
+    width: 18px;            
+    height: 18px;
+    background: #ef4444;    
+    color: #fff;
+    border-radius: 50%;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;    
+}

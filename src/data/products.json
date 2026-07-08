@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "nom": "T-shirt",
+    "prix": 93.88,
+    "categorie": "Vetements",
+    "image": "tshirt.jpg"
+  },
+  {
+    "id": 2,
+    "nom": "Casquette",
+    "prix": 122.07,
+    "categorie": "Accessoires",
+    "image": "casquette.jpg"
+  },
+  { "id": 3,
+    "nom": "Jean", 
+    "prix": 245.09, 
+    "categorie": "Vetements", 
+    "image": "jean.jpg"
+   },
+   {
+    "id": 4,
+    "nom": "Lunettes de soleil",
+    "prix": 150,
+    "categorie": "Accessoires",
+    "image": "lunettes.jpg"
+  },
+  {
+    "id": 5,
+    "nom": "Sweat à capuche",
+    "prix": 140,
+    "categorie": "Vetements",
+    "image": "sweat.jpg"
+  },
+  {
+    "id": 6,
+    "nom": "Montre",
+    "prix": 1343,
+    "categorie": "Accessoires",
+    "image": "montre.jpg"
+  },
+  {
+    "id": 7,
+    "nom": "Baskets",
+    "prix": 460,
+    "categorie": "Chaussures",
+    "image": "baskets.jpg"
+  },
+  {
+    "id": 8,
+    "nom": "Sac à dos",
+    "prix": 350,
+    "categorie": "Accessoires",
+    "image": "sac.jpg"
+  }
+]
