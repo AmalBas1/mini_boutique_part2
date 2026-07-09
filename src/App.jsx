@@ -3,6 +3,10 @@ import Header from './components/Header'
 import Home from './pages/Home'
 import AddProduct from './pages/AddProduct'
 
+
+function App(){
+return(
+
 <BrowserRouter>
 
 
@@ -12,3 +16,6 @@ import AddProduct from './pages/AddProduct'
   <Route path= "/add" element ={<AddProduct/>}/>
 </Routes>
 </BrowserRouter>
+)
+}
+export default App;
