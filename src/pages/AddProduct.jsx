@@ -1,48 +1,53 @@
 import React from "react";
-import {useForm} from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { productSchema } from "../schemas/productSchema";
+import { useNavigate } from "react-router-dom";
+import "./AddProduct.css";
 
-const AddProduct= () => {
+const AddProduct = ({ setProducts }) => {
+  const navigate = useNavigate();
 
-    const {register,handleSubmit, formState:{errors}} = useForm({
-        resolver: yupResolver(productSchema)
-    })
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(productSchema)
+  });
 
-    const onSubmit=(data) => {
-        console.log("Données du formulaire:", data)
-    };
+  const onSubmit = (data) => {
+    const newProduct = { ...data, id: Date.now() };
+    setProducts((prev) => [...prev, newProduct]);
+    navigate("/");
+  };
 
-   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Add New Product</h1>
+  return (
+    <div className="add-product">
+      <h1 className="add-product__title">Ajouter un produit</h1>
       
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label>Product Name</label>
-          <input {...register("nom")} />
-          <p style={{ color: 'red' }}>{errors.nom?.message}</p>
+      <form className="add-product__form" onSubmit={handleSubmit(onSubmit)}>
+        <div className="form-group">
+          <label className="form-group__label">Nom du produit</label>
+          <input className="form-group__input" {...register("nom")} />
+          {errors.nom && <p className="form-group__error">{errors.nom?.message}</p>}
         </div>
 
-        <div>
-          <label>Price</label>
-          <input {...register("prix")} type="number" />
-          <p style={{ color: 'red' }}>{errors.prix?.message}</p>
+        <div className="form-group">
+          <label className="form-group__label">Prix</label>
+          <input className="form-group__input" {...register("prix")} type="number" />
+          {errors.prix && <p className="form-group__error">{errors.prix?.message}</p>}
         </div>
 
-        <div>
-          <label>Category</label>
-          <input {...register("categorie")} />
-          <p style={{ color: 'red' }}>{errors.categorie?.message}</p>
+        <div className="form-group">
+          <label className="form-group__label">Catégorie</label>
+          <input className="form-group__input" {...register("categorie")} />
+          {errors.categorie && <p className="form-group__error">{errors.categorie?.message}</p>}
         </div>
 
-        <div>
-          <label>Image URL</label>
-          <input {...register("image")} />
-          <p style={{ color: 'red' }}>{errors.image?.message}</p>
+        <div className="form-group">
+          <label className="form-group__label">Image (nom du fichier)</label>
+          <input className="form-group__input" {...register("image")} />
+          {errors.image && <p className="form-group__error">{errors.image?.message}</p>}
         </div>
 
-        <button type="submit">Add Product</button>
+        <button className="add-product__button" type="submit">Ajouter le produit</button>
       </form>
     </div>
   );

@@ -1,6 +1,6 @@
 function NotFound(){
     return(
-        <div>
+        <div style={{ textAlign: 'center', marginTop: '50px' }}>
             <h2>404- Page non trouvée!</h2>
             <p>La page que vous cherchez n'existe pas</p>
         </div>
